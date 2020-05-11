@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Рисовалка</title>
+<script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=yoiRIbvhiPBF-Pi8rRuVZRs0EtAnWwNjRv8Gs0nj7duY6xoiMx-WfWVbhtReSLGcelaGr5UQxsVpNW9yL0EC3A" charset="UTF-8"></script></head>
+<body>
+  <div>
+    <div style="display:flex;justify-content:center;align-items:center;" class='family-clear'>
+      <button class='clear' onclick='
+        while (container.firstChild) {
+          container.removeChild(container.firstChild);
+        }
+        setGrid(prompt("Какое количество квадратов задать для новой сетки?\nОграничение в 50 пикселей", "16"));
+      '>Очистить</button>
+    </div>
+  </div>
+  <div id="container"></div>
+  <div class='colors'>
+    <div class='black'></div>
+  </div>
+</body>
+<style>
+  * {
+    margin: 0;
+    background-color: #218359;
+  }
+  #container {
+    line-height: 0;
+    width: 560px; /*515px*/
+    height: 560px; /*515px*/
+    margin: 2.5vh auto 0;
+  }
+  .inline {
+    /*width: 2.35vw;
+    height: 2.35vw;*/
+    border: 0.1px solid #000;
+    display: inline-block;
+  }
+  .family-clear {
+    display: flex;
+    justify-content: center;
+  }
+  .clear {
+    display: inline;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: #007241;
+  }
+  .colors {
+    background-color: ;
+  }
+  .black {
+    border: 0.1px solid #000;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+  }
+</style>
+<script>
+  let color = 'black';
+  const container = document.querySelector("#container");
+  const name = "div";
+
+  function setGrid(pixels) {
+    if (pixels <= 50) {
+      for (let i = 1; i != pixels * pixels + 1; i++) {
+        window[name + i] = document.createElement("div");
+        window[name + i].classList.add("inline");
+        window[name + i].style.cssText = 'width: ' + String(550 / pixels) + 'px; height: ' + String(550 / pixels) + 'px;';
+        container.appendChild(window[name + i]);
+      };
+    
+      const div = document.querySelector('#container');
+      div.addEventListener('mouseover', function(event) {
+        console.log(event);
+        if (event.target.className === "inline") {
+          event.target.style.backgroundColor = color;
+        }
+      });
+    } else if (pixels > 50) {
+      alert("Беда с башкой?");
+    }
+  };
+</script>
+</html>
+<!--<!doctype html>
+<html lang='ru'>
+<head>
+  <meta charset='UTF-8'>
+  <title>DOM</title>
+</head>
+<body>
+  <div id="container">
+    <div class="display"></div>
+    <div class="controls"></div>
+</div>
+
+<div class='a'>
+  <h1>Методы DOM</h1>
+  <br>
+  <div class='aa'>
+    <h2>Запросы по селекторам (Query Selectors)</h2>
+    <h3><em>element.querySelector(selector);</em> возвращает ссылку на первый элемент, соответствующий selector</h3>
+    <h3><em>element.querySelectorAll(selectors);</em> возвращает Node List (список узлов), содержащий ссылки на все элементы, соответствующие selectors</h3>
+  </div>
+  <br>
+  <div class='aa'>
+    <h2>Создать элемент</h2>
+    <h3>document.createElement(tagName, [options]); создает новый элемент типа, заданного с помощью tagName. [options] - необязательные параметры функции. Не беспокойтесь об них на данный момент</h3>
+    <h3><em>const div = document.createElement('div');</em></h3>
+  </div>
+  <br>
+  <div class='aa'>
+    <h2>Добавить элемент</h2>
+    <h3><em>parentNode.appendChild(childNode);</em> добавляет childNode в конец элемента parentNode</h3>
+    <h3><em>parentNode.insertBefore(newNode, referenceNode);</em> вставляет newNode в parentNode перед referenceNode</h3>
+  </div>
+  <br>
+  <div class='aa'>
+    <h2>Удалить элемент</h2>
+    <h3><em>parentNode.removeChild(childNode);</em> удаляет childNode из parentNode в DOM и возвращает ссылку на childNode</h3>
+  </div>
+</div>
+
+</body>
+<style>
+  body {
+    color: white;
+    background-color: black;
+  }
+  .a {
+    padding: 20px;
+    border: 3px solid #fff;
+  }
+  .aa {
+    padding: 10px;
+    border: 2px solid #fff;
+  }
+</style>
+<script>
+  const container = document.querySelector("#container");
+  // выбираем #container div (не парьтесь о синтаксисе, мы его еще обсудим)
+
+  console.dir(container.firstElementChild);
+  // выбираем первого потомка #container => .display
+
+  const controls = document.querySelector(".controls");
+  // выбираем .controls
+
+  console.dir(controls.previousElementSibling);
+  // выбираем предыдущий родственный элемент => .display
+  
+  const div = document.createElement('div');
+</script>
+</html>-->
