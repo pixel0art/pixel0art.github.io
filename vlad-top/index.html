@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Рисовалка</title>
-<script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=yoiRIbvhiPBF-Pi8rRuVZRs0EtAnWwNjRv8Gs0nj7duY6xoiMx-WfWVbhtReSLGcelaGr5UQxsVpNW9yL0EC3A" charset="UTF-8"></script></head>
+<script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=Zi5CagRRcsUEAPPb9mhU8hQJ8u8NBIyMvFREKM8mw_gkf_XbbXSxnfYRd9qaga6CFv9qronCQdgMnASZoB-nJQ" charset="UTF-8"></script></head>
 <body>
   <div>
     <div style="display:flex;justify-content:center;align-items:center;" class='family-clear'>
@@ -20,12 +20,13 @@
   <div id="container"></div>
   <div class='colors'>
     <div class='black'></div>
+    <div class='white'></div>
   </div>
 </body>
 <style>
   * {
     margin: 0;
-    background-color: #218359;
+    background-color: #00A383;
   }
   #container {
     line-height: 0;
@@ -38,6 +39,7 @@
     height: 2.35vw;*/
     border: 0.1px solid #000;
     display: inline-block;
+    background-color: white;
   }
   .family-clear {
     display: flex;
@@ -48,13 +50,14 @@
     padding: 5px;
     border: 2px solid black;
     border-radius: 15px;
-    background-color: #007241;
+    background-color: #34D1B2;
   }
   .colors {
-    background-color: ;
+    width: 200px;
+    background-color: #235D79;
   }
   .black {
-    border: 0.1px solid #000;
+    border: 0.1px solid black;
     display: inline-block;
     width: 100px;
     height: 100px;
@@ -62,6 +65,17 @@
     border-radius: 50%;
     position: absolute;
     top: 0;
+  }
+  .white {
+    border: 0.1px solid white;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 100px;
   }
 </style>
 <script>
