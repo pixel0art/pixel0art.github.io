@@ -5,7 +5,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Рисовалка</title>
-<script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=Zi5CagRRcsUEAPPb9mhU8hQJ8u8NBIyMvFREKM8mw_gkf_XbbXSxnfYRd9qaga6CFv9qronCQdgMnASZoB-nJQ" charset="UTF-8"></script></head>
 <body>
   <div>
     <div style="display:flex;justify-content:center;align-items:center;" class='family-clear'>
@@ -18,21 +17,46 @@
     </div>
   </div>
   <div id="container"></div>
-  <div class='colors'>
-    <div class='black'></div>
-    <div class='white'></div>
+    <div id='colors2'>
+      <div class='chartreuse' onclick='color = "chartreuse";'></div>
+      <div class='peach' onclick='color = "#ffe5b4";'></div>
+      <div class='pink' onclick='color = "pink";'></div>
+      <div class='neon-pink' onclick='color = "#fc0fc0";'></div>
+      <div class='your' onclick='let color_your = prompt("Введите название на английском или HEX-код:"); color = color_your;'><p>СВОЙ</p></div>
+    </div>
+    <div class='colors1'>
+      <div class='black' onclick='color = "black";'></div>
+      <div class='white' onclick='color = "white";'></div>
+      <div class='red' onclick='color = "red";'></div>
+      <div class='orange' onclick='color = "orange";'></div>
+      <div class='yellow' onclick='color = "yellow";'></div>
+      <div class='green' onclick='color = "green";'></div>
+      <div class='deepskyblue' onclick='color = "deepskyblue";'></div>
+      <div class='blue' onclick='color = "blue";'></div>
+      <div class='purple' onclick='color = "purple";'></div>
+      <div class='gray' onclick='color = "gray";'></div>
+    </div>
+    <div class='buttons'>
+      <button onclick='let error = document.querySelector("#colors2"); error.style.display = "block";'>Открыть</button><br>
+      <button onclick='let error = document.querySelector("#colors2"); error.style.display = "none";'>Закрыть</button>
+    </div>
   </div>
 </body>
 <style>
   * {
     margin: 0;
+    /*cursor: url("default.cur"), default;*/
+  }
+  body {
+    cursor: url("default.cur"), default;
     background-color: #00A383;
   }
   #container {
+    cursor: url("draft.cur"), default;
     line-height: 0;
-    width: 560px; /*515px*/
-    height: 560px; /*515px*/
-    margin: 2.5vh auto 0;
+    width: 560px; /*515px 560*/
+    height: 560px; /*515px 560*/
+    margin: 15px auto 0;
   }
   .inline {
     /*width: 2.35vw;
@@ -46,18 +70,97 @@
     justify-content: center;
   }
   .clear {
+    cursor: url("pointer.cur"), default;
     display: inline;
     padding: 5px;
     border: 2px solid black;
     border-radius: 15px;
     background-color: #34D1B2;
+    font-size: 15px;
+    width: 500px;
   }
-  .colors {
-    width: 200px;
+  #colors2 {
+    display: none;
+    position: absolute;
+    top: 46px;
+    width: 300px;
+    height: 500px;
     background-color: #235D79;
+    border: 3px solid #034769;
+    border-radius: 50px;
+  }
+  .chartreuse {
+    cursor: url("pointer.cur"), default;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: chartreuse;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 200px;
+  }
+  .peach {
+    cursor: url("pointer.cur"), default;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: #ffe5b4;
+    border-radius: 50%;
+    position: absolute;
+    top: 100px;
+    left: 200px;
+  }
+  .pink {
+    cursor: url("pointer.cur"), default;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    border-radius: 50%;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+  }
+  .neon-pink {
+    cursor: url("pointer.cur"), default;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: #fc0fc0;
+    box-shadow: 0px 0px 50px 15px #fc0fc0;
+    border-radius: 50%;
+    position: absolute;
+    top: 300px;
+    left: 200px;
+  }
+  .your {
+    cursor: url("pointer.cur"), default;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 400px;
+    left: 200px;
+  }
+  .your p {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 35px;
+  }
+  .colors1 {
+    position: absolute;
+    top: 46px;
+    width: 200px;
+    height: 500px;
+    background-color: #235D79;
+    border: 3px solid #034769;
+    border-radius: 50px;
   }
   .black {
-    border: 0.1px solid black;
+    cursor: url("pointer.cur"), default;
     display: inline-block;
     width: 100px;
     height: 100px;
@@ -67,7 +170,7 @@
     top: 0;
   }
   .white {
-    border: 0.1px solid white;
+    cursor: url("pointer.cur"), default;
     display: inline-block;
     width: 100px;
     height: 100px;
@@ -76,6 +179,102 @@
     position: absolute;
     top: 0;
     left: 100px;
+  }
+  .red {
+    cursor: url("pointer.cur"), default;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 100px;
+  }
+  .orange {
+    cursor: url("pointer.cur"), default;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    border-radius: 50%;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+  }
+  .yellow {
+    cursor: url("pointer.cur"), default;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: 200px;
+  }
+  .green {
+    cursor: url("pointer.cur"), default;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    border-radius: 50%;
+    position: absolute;
+    top: 200px;
+    left: 100px;
+  }
+  .deepskyblue {
+    cursor: url("pointer.cur"), default;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: deepskyblue;
+    border-radius: 50%;
+    position: absolute;
+    top: 300px;
+  }
+  .blue {
+    cursor: url("pointer.cur"), default;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border-radius: 50%;
+    position: absolute;
+    top: 300px;
+    left: 100px;
+  }
+  .purple {
+    cursor: url("pointer.cur"), default;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: purple;
+    border-radius: 50%;
+    position: absolute;
+    top: 400px;
+  }
+  .gray {
+    cursor: url("pointer.cur"), default;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    border-radius: 50%;
+    position: absolute;
+    top: 400px;
+    left: 100px;
+  }
+  .buttons {
+    position: absolute;
+    right: 0;
+    top: 40vh;
+  }
+  .buttons button {
+    cursor: url("pointer.cur"), default;
+    font-size: 50px;
+    padding: 5px;
+    border: 5px solid #000;
+    border-radius: 100px;
   }
 </style>
 <script>
@@ -91,87 +290,28 @@
         window[name + i].style.cssText = 'width: ' + String(550 / pixels) + 'px; height: ' + String(550 / pixels) + 'px;';
         container.appendChild(window[name + i]);
       };
-    
-      const div = document.querySelector('#container');
-      div.addEventListener('mouseover', function(event) {
-        console.log(event);
-        if (event.target.className === "inline") {
-          event.target.style.backgroundColor = color;
-        }
-      });
     } else if (pixels > 50) {
       alert("Беда с башкой?");
+    };
+  };
+  setGrid(16);
+  container.addEventListener('click', function(event) { // mouseover
+    console.log(event);
+    if (event.target.className === "inline") {
+      if (color === '#fc0fc0') {
+        event.target.style.backgroundColor = color;
+        event.target.style.boxShadow = '0px 0px 25px 15px #fc0fc0';
+      } else {
+        event.target.style.backgroundColor = color;
+        console.log(event);
+      }
     }
+  });
+  document.getElementById('container').oncontextmenu = (e) => {
+    e.preventDefault();
+    e.target.style.background = 'white';
+    console.log(e);
+    console.log(e.target);
   };
 </script>
 </html>
-<!--<!doctype html>
-<html lang='ru'>
-<head>
-  <meta charset='UTF-8'>
-  <title>DOM</title>
-</head>
-<body>
-  <div id="container">
-    <div class="display"></div>
-    <div class="controls"></div>
-</div>
-
-<div class='a'>
-  <h1>Методы DOM</h1>
-  <br>
-  <div class='aa'>
-    <h2>Запросы по селекторам (Query Selectors)</h2>
-    <h3><em>element.querySelector(selector);</em> возвращает ссылку на первый элемент, соответствующий selector</h3>
-    <h3><em>element.querySelectorAll(selectors);</em> возвращает Node List (список узлов), содержащий ссылки на все элементы, соответствующие selectors</h3>
-  </div>
-  <br>
-  <div class='aa'>
-    <h2>Создать элемент</h2>
-    <h3>document.createElement(tagName, [options]); создает новый элемент типа, заданного с помощью tagName. [options] - необязательные параметры функции. Не беспокойтесь об них на данный момент</h3>
-    <h3><em>const div = document.createElement('div');</em></h3>
-  </div>
-  <br>
-  <div class='aa'>
-    <h2>Добавить элемент</h2>
-    <h3><em>parentNode.appendChild(childNode);</em> добавляет childNode в конец элемента parentNode</h3>
-    <h3><em>parentNode.insertBefore(newNode, referenceNode);</em> вставляет newNode в parentNode перед referenceNode</h3>
-  </div>
-  <br>
-  <div class='aa'>
-    <h2>Удалить элемент</h2>
-    <h3><em>parentNode.removeChild(childNode);</em> удаляет childNode из parentNode в DOM и возвращает ссылку на childNode</h3>
-  </div>
-</div>
-
-</body>
-<style>
-  body {
-    color: white;
-    background-color: black;
-  }
-  .a {
-    padding: 20px;
-    border: 3px solid #fff;
-  }
-  .aa {
-    padding: 10px;
-    border: 2px solid #fff;
-  }
-</style>
-<script>
-  const container = document.querySelector("#container");
-  // выбираем #container div (не парьтесь о синтаксисе, мы его еще обсудим)
-
-  console.dir(container.firstElementChild);
-  // выбираем первого потомка #container => .display
-
-  const controls = document.querySelector(".controls");
-  // выбираем .controls
-
-  console.dir(controls.previousElementSibling);
-  // выбираем предыдущий родственный элемент => .display
-  
-  const div = document.createElement('div');
-</script>
-</html>-->
